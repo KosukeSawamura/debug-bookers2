@@ -22,11 +22,13 @@ before_action :login_user_matching, only: [:edit, :update]
     @newbook=Book.new
     @book = Book.find(params[:id])
     @user = @book.user
+    @book_comment = BookComment.new
   end
 
   def index
     @book=Book.new
     @books = Book.all
+  
   end
 
   def edit
