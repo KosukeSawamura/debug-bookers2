@@ -8,6 +8,14 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
+  <tr>
+    <th>following</th>
+    <th><%= @following_users.count %></th>
+  </tr>
+  <tr>
+    <th>follower</th>
+    <th><%= @follower_users.count %></th>
+  </tr>
 </table>
 
 <div class='row'>
