@@ -28,7 +28,7 @@ before_action :login_user_matching, only: [:edit, :update]
   def index
     @book=Book.new
     @books = Book.all
-  
+
   end
 
   def edit

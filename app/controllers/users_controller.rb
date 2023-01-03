@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @book = Book.new
-    @user = User.find(params[:id])
+    @user = User.find_by(params[:id])
     @following_users = @user.following_user
     @follower_users = @user.follower_user
   end
