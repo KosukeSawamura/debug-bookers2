@@ -28,6 +28,9 @@ before_action :login_user_matching, only: [:edit, :update]
   def index
     @book=Book.new
     @books = Book.all
+    @user = User.find_by(params[:id])
+    @following_users = @user.following_user
+    @follower_users = @user.follower_user
 
   end
 
