@@ -27,22 +27,15 @@
         </tr>
       </table>
 
-          <% @book.book_comments.each do |book_comment| %>
-          <%= image_tag book_comment.user.get_profile_image, size:"100x100" %>
+        <div class="new-comment">
+  <%= render 'book_comments/post_comments', book: @book %>
+</div>
+<!--コメント一覧部分-->
+<!--divタグのclassをid="comments_area"に変更-->
+<div id="comments_area">
+  <%= render 'book_comments/form', book: @book, book_comment: @book_comment %>
+</div>
 
-          <%= book_comment.comment %>
-          <% if book_comment.user == current_user %>
-            <%= link_to 'Destroy', book_book_comment_path(book_comment.book, book_comment), method: :delete, class: "btn btn-sm btn-danger" %>
-            <% end %><br>
-            <%= link_to user_path(book_comment.user.id) do %>
-          <%= book_comment.user.name %>
-          <% end %><br>
-          <% end %>
-
-      <%= form_with model: [@book, @book_comment] do |f| %>
-            <%= f.text_area :comment, rows:'5' %><br>
-            <%= f.submit "送信" %>
-          <% end %>
     </div>
   </div>
 </div>
