@@ -34,7 +34,7 @@
          <% end %>
        <% end %>
 
-<% if current_user == @user %>
+<% if current_user == @user && user.name != "guestuser" %>
 <div class='row'>
   <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
     <i class="fas fa-user-cog"></i>
